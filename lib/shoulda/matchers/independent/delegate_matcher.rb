@@ -44,7 +44,7 @@ module Shoulda # :nodoc:
 
             matcher = Mocha::API::HaveReceived.new(method_on_target).with(*@delegated_arguments)
             matcher.matches?(stubbed_object)
-          rescue NoMethodError, Mocha::ExpectationError
+          rescue NoMethodError, Mocha::ExpectationError, MiniTest::Assertion
             false
           end
         end
