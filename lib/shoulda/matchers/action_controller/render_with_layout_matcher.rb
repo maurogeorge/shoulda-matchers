@@ -71,9 +71,17 @@ module Shoulda # :nodoc:
 
         def recorded_layouts
           if @context
-            @context.instance_variable_get('@layouts')
+            @context.instance_variable_get(layouts_ivar)
           else
             {}
+          end
+        end
+
+        def layouts_ivar
+          if Rails::VERSION::MAJOR >= 4
+            '@_layouts'
+          else
+            '@layouts'
           end
         end
 

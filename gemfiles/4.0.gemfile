@@ -12,5 +12,6 @@ gem "therubyrhino", :platform=>:jruby
 gem "rails", "4.0.0.beta1"
 gem "jquery-rails"
 gem "sass-rails", "~> 4.0.0.beta1"
+gem "protected_attributes"
 
 gemspec :path=>"../"
