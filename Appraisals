@@ -46,7 +46,7 @@ end
 
 appraise '4.1.0.beta1' do
   instance_eval(&rails_4_0)
-  gem 'rails', '4.1.0.beta1'
+  gem 'rails', github: 'rails/rails'
   gem 'sass-rails', '4.0.1'
   gem 'bcrypt-ruby', '~> 3.1.2'
   gem "protected_attributes", github: 'rails/protected_attributes'
