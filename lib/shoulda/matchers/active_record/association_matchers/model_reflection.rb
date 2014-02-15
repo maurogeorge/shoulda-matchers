@@ -21,8 +21,8 @@ module Shoulda
 
           def join_table
             join_table =
-              if has_and_belongs_to_many_table_name
-                has_and_belongs_to_many_table_name
+              if has_and_belongs_to_many_name_table_name
+                has_and_belongs_to_many_name_table_name
               elsif reflection.respond_to?(:join_table)
                 reflection.join_table
               else
@@ -76,10 +76,22 @@ module Shoulda
             end
           end
 
-          def has_and_belongs_to_many_table_name
-            return false if reflection.options[:through].nil?
-            @subject.reflect_on_all_associations.detect { |r| r.plural_name.to_sym == reflection.options[:through] }
-            .options[:class].table_name
+          def has_and_belongs_to_many_name
+            reflection.options[:through]
+          end
+
+
+          def has_and_belongs_to_many_name_table_name
+            if has_and_belongs_to_many_reflection
+              has_and_belongs_to_many_reflection.table_name
+            end
+          end
+
+          def has_and_belongs_to_many_reflection
+            @_has_and_belongs_to_many_reflection ||= 
+              if has_and_belongs_to_many_name
+                @subject.reflect_on_association(has_and_belongs_to_many_name)
+              end
           end
         end
       end
