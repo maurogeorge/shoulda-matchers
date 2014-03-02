@@ -112,7 +112,7 @@ Then /^the output should indicate that (\d+) tests? (?:was|were) run/ do |number
   # Rails 4 has slightly different output than Rails 3 due to
   # Test::Unit::TestCase -> MiniTest
   if rails_4?
-    steps %{Then the output should contain "#{number} tests, #{number} assertions, 0 failures, 0 errors, 0 skips"}
+    steps %{Then the output should match /#{number} (tests|runs), #{number} assertions, 0 failures, 0 errors, 0 skips/}
   else
     steps %{Then the output should contain "#{number} tests, #{number} assertions, 0 failures, 0 errors"}
   end
