@@ -67,7 +67,8 @@ When 'I configure the application to use rspec-rails in test and development' do
 end
 
 When 'I configure the application to use shoulda-context' do
-  append_to_gemfile %q(gem 'shoulda-context', '~> 1.0')
+  append_to_gemfile %q(gem 'shoulda-context', github: 'thoughtbot/shoulda-context', branch: 'ew-minitest-5-compatibility')
+  append_to_gemfile %q(gem 'pry')
   steps %{And I install gems}
 end
 
