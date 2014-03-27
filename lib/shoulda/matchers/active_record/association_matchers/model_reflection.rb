@@ -80,7 +80,6 @@ module Shoulda
             reflection.options[:through]
           end
 
-
           def has_and_belongs_to_many_name_table_name
             if has_and_belongs_to_many_reflection
               has_and_belongs_to_many_reflection.table_name
@@ -88,7 +87,7 @@ module Shoulda
           end
 
           def has_and_belongs_to_many_reflection
-            @_has_and_belongs_to_many_reflection ||= 
+            @_has_and_belongs_to_many_reflection ||=
               if has_and_belongs_to_many_name
                 @subject.reflect_on_association(has_and_belongs_to_many_name)
               end
