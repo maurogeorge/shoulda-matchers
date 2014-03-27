@@ -126,7 +126,7 @@ Then /^the output should indicate that (\d+) unit and (\d+) functional tests? we
   # Rails 3 runs separate test suites in separate processes, but Rails 4 does
   # not, so that's why we have to check for different things here
   if rails_4?
-    steps %{Then the output should contain "#{total} tests, #{total} assertions, 0 failures, 0 errors, 0 skips"}
+    steps %{Then the output should match /#{total} (tests|runs), #{total} assertions, 0 failures, 0 errors, 0 skips/}
   else
     steps %{Then the output should match /#{n1} tests, #{n1} assertions, 0 failures, 0 errors.+#{n2} tests, #{n2} assertions, 0 failures, 0 errors/}
   end
