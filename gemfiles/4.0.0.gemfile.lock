@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/thoughtbot/shoulda-context.git
-  revision: 41758b4f6837cf49c4591c7c63a926442bd87ad7
+  revision: df7bc5972907a952df87f0391ca21d4bc171adfc
   branch: ew-minitest-5-compatibility
   specs:
     shoulda-context (1.1.6)
