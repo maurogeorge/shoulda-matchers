@@ -49,5 +49,5 @@ appraise '4.1.0.beta1' do
   gem 'rails', github: 'rails/rails'
   gem 'sass-rails', '4.0.1'
   gem 'bcrypt-ruby', '~> 3.1.2'
-  gem "protected_attributes", github: 'rails/protected_attributes'
+  gem "protected_attributes", '~> 1.0.6'
 end
